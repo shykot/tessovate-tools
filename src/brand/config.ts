@@ -1,7 +1,9 @@
 // Nishu Digital Tools - brand settings.
 // Keep all branding here so upstream OmniTools updates merge cleanly.
-import logo from './logo.svg';
-import logoWhite from './logo-white.svg';
+// logo.png = official Nishu Digital logo (from nishu.digital/assets/img/logo.png).
+// To use a separate logo for dark mode, add logo-white.png and import it below.
+import logo from './logo.png';
+const logoWhite = logo;
 
 export const BRAND = {
   name: 'Nishu Digital Tools',
