@@ -5,8 +5,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from 'assets/logo.png';
-import logoWhite from 'assets/logo-white.png';
+import { BRAND } from '../../brand/config';
 import {
   Drawer,
   List,
@@ -112,43 +111,7 @@ const Navbar: React.FC<NavbarProps> = ({
             ? 'ic:round-light-mode'
             : 'ic:round-contrast'
       }
-    />,
-    <Icon
-      key="discord"
-      onClick={() => window.open('https://discord.gg/SDbbn3hT4b', '_blank')}
-      style={{ cursor: 'pointer' }}
-      fontSize={30}
-      icon={'ic:baseline-discord'}
-    />,
-    <iframe
-      key="github-star"
-      src="https://ghbtns.com/github-btn.html?user=iib0011&repo=omni-tools&type=star&count=true&size=large"
-      frameBorder="0"
-      scrolling="0"
-      width="150"
-      height="30"
-      title="GitHub"
-    ></iframe>,
-    <Button
-      key="translate"
-      onClick={() => {
-        window.open(
-          'https://www.locize.app/register?invitation=YOIH0Dyz3KHh3uQFCGYe9v1QOUoq8W5ySgmlwjX9cSypeJmt8F40brDtVbXb71fK',
-          '_blank'
-        );
-      }}
-      sx={{ borderRadius: '100px' }}
-      variant={'contained'}
-      startIcon={
-        <Icon
-          style={{ cursor: 'pointer' }}
-          fontSize={25}
-          icon={'ix:language-filled'}
-        />
-      }
-    >
-      {t('navbar.helpTranslate')}
-    </Button>
+    />
   ];
   const drawerList = (
     <List>
@@ -184,12 +147,15 @@ const Navbar: React.FC<NavbarProps> = ({
         }}
       >
         <Stack direction="row" spacing={1.5} alignItems="center">
-          <Link to="/">
+          <a href={BRAND.url} target="_blank" rel="noopener noreferrer">
             <img
-              src={theme.palette.mode === 'light' ? logo : logoWhite}
-              width={isMobile ? '120px' : '200px'}
+              src={
+                theme.palette.mode === 'light' ? BRAND.logo : BRAND.logoWhite
+              }
+              alt={BRAND.name}
+              width={isMobile ? '150px' : '220px'}
             />
-          </Link>
+          </a>
           <Typography
             component="span"
             variant="caption"

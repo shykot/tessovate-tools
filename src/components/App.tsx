@@ -10,6 +10,7 @@ import { tools } from '../tools';
 import './index.css';
 import { darkTheme, lightTheme } from '../config/muiConfig';
 import ScrollToTopButton from './ScrollToTopButton';
+import Footer from '../brand/Footer';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../i18n';
 import { UserTypeFilterProvider } from 'providers/UserTypeFilterProvider';
@@ -70,6 +71,7 @@ function App() {
                 <Suspense fallback={<Loading />}>
                   <AppRoutes />
                 </Suspense>
+                <Footer />
               </BrowserRouter>
             </UserTypeFilterProvider>
           </CustomSnackBarProvider>
